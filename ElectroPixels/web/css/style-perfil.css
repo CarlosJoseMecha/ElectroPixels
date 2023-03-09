@@ -1,0 +1,205 @@
+
+body{
+   margin-top:20px;
+   color: #1a202c;
+   text-align: left;
+   background-color: #e2e8f0;
+   height: 100%;
+   font-family: 'Poppins', sans-serif !important;
+}
+
+.main-body {
+   padding: 15px;
+   height: 100%;
+   min-height: 100vh;
+}
+.card {
+   box-shadow: 0 1px 3px 0 rgba(0,0,0,.1), 0 1px 2px 0 rgba(0,0,0,.06);
+}
+
+.card {
+   position: relative;
+   display: flex;
+   flex-direction: column;
+   min-width: 0;
+   word-wrap: break-word;
+   background-color: #fff;
+   background-clip: border-box;
+   border: 0 solid rgba(0,0,0,.125);
+   border-radius: .25rem;
+}
+
+.card-body {
+   flex: 1 1 auto;
+   min-height: 1px;
+   padding: 1rem;
+}
+
+.gutters-sm {
+   margin-right: -8px;
+   margin-left: -8px;
+}
+
+.gutters-sm>.col, .gutters-sm>[class*=col-] {
+   padding-right: 8px;
+   padding-left: 8px;
+}
+.mb-3, .my-3 {
+   margin-bottom: 1rem!important;
+}
+
+.bg-gray-300 {
+   background-color: #e2e8f0;
+}
+.h-100 {
+   height: 100%!important;
+}
+.h-50 {
+   height: 50%!important;
+}
+.shadow-none {
+   box-shadow: none!important;
+}
+
+/* Style interior acordeon */
+
+.card {
+   z-index: 0;
+   background-color: #ECEFF1;
+   border-radius: 10px;
+}
+
+.top {
+   padding-top: 40px;
+   padding-left: 13% !important;
+   padding-right: 13% !important;
+}
+
+/*Icon progressbar*/
+#progressbar {
+   margin-bottom: 30px;
+   overflow: hidden;
+   color: #455A64;
+   padding-left: 0px;
+   margin-top: 30px;
+
+}
+
+#progressbar li {
+   list-style-type: none;
+   font-size: 13px;
+   width: 40%;
+   float: left;
+   position: relative;
+   font-weight: 400;
+}
+
+#progressbar .step0:before {
+   content: '\F26B'; /* Código de carácter de la fuente de Bootstrap */
+   font-family: "bootstrap-icons"; /* Nombre de la fuente de Bootstrap */
+   color: #fff;
+}
+
+#progressbar li:before {
+   width: 40px;
+   height: 40px;
+   line-height: 40px;
+   display: block;
+   font-size: 20px;
+   background: #C5CAE9;
+   border-radius: 50%;
+   margin: auto;
+   padding: 0px;
+}
+
+/*ProgressBar connectors*/
+#progressbar li:after {
+   content: '';
+   width: 100%;
+   height: 12px;
+   background: #C5CAE9;
+   position: absolute;
+   left: 0;
+   top: 16px;
+   z-index: -1;
+}
+
+#progressbar li:last-child:after {
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+   position: absolute;
+   left: -50%;
+}
+
+#progressbar li:nth-child(2):after, #progressbar li:nth-child(3):after {
+   left: -50%;
+}
+
+#progressbar li:first-child:after {
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+   position: absolute;
+   left: 50%;
+}
+
+#progressbar li:last-child:after {
+   border-top-right-radius: 10px;
+   border-bottom-right-radius: 10px;
+}
+
+#progressbar li:first-child:after {
+   border-top-left-radius: 10px;
+   border-bottom-left-radius: 10px;
+}
+
+/*Color number of the step and the connector before it*/
+#progressbar li.active:before, #progressbar li.active:after {
+   background: #651FFF;
+}
+
+#progressbar li.active:before {
+   content: '\F26B'; /* Código de carácter de la fuente de Bootstrap */
+   font-family: "bootstrap-icons"; /* Nombre de la fuente de Bootstrap */
+}
+
+.icon {
+   width: 40px;
+   height: 40px;
+   margin-right: 15px;
+}
+
+.icon-content {
+   padding-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+   .icon-content {
+      width: 50%;
+   }
+}
+
+/*LEDS */
+
+.led-red {
+   margin: 0 auto;
+   width: 10px;
+   height: 10px;
+   background-color: #F00;
+   border-radius: 50%;
+}
+
+.led-yellow {
+   margin: 0 auto;
+   width: 10px;
+   height: 10px;
+   background-color: #FF0;
+   border-radius: 50%;
+}
+
+.led-green {
+   margin: 0 auto;
+   width: 10px;
+   height: 10px;
+   background-color: #ABFF00;
+   border-radius: 50%;
+}

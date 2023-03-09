@@ -1,0 +1,88 @@
+CREATE DATABASE electropixels_db_hibernate;
+USE electropixels_db_hibernate;
+
+CREATE TABLE IF NOT EXISTS `usuarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `titulo` varchar(255) NOT NULL,
+  `precio` float NOT NULL,
+  `autor` varchar(255) NOT NULL,
+  `URLimagen` varchar(255) NOT NULL,
+  `URLperfil` varchar(255) NOT NULL,
+  `cantidad` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+);
+
+CREATE TABLE IF NOT EXISTS `pedidos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_usuario` int(11) NOT NULL,
+  `fecha_pedido` DATE NOT NULL,
+  `total_pedido` float NOT NULL,
+  `estado` enum('procesado','enviado','recibido') NOT NULL,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+CREATE TABLE IF NOT EXISTS `pedidos_productos` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_pedido` int(11) NOT NULL,
+  `id_producto` int(11) NOT NULL,
+  `cantidad` int(11) NOT NULL DEFAULT 1,
+  PRIMARY KEY (`id`),
+  FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE
+);
+
+
+INSERT INTO usuarios (id, nombre, email) VALUES
+(1, 'admin', 'admin@gmail.com'),
+(2, 'gestor', 'gestor@gmail.com'),
+(3, 'cliente', 'cliente@gmail.com');
+
+
+INSERT INTO `productos` (`id`, `titulo`, `precio`, `autor`, `URLimagen`, `URLperfil`, `cantidad`) VALUES
+(1, 'Chonk #25', 0.5, 'Chonky Society', 'https://i.seadn.io/gae/Q9DgRKJG6QV0i0ZTHN8KjXMbOPQHgCTuvTyZdGHRatG4XvWsCFGeRLi4dMkcTJsjjXYzJ5AOsKGP9h1FyIC740QqE1VF6Xpu2FSQSA?auto=format&w=1000', 'https://i.seadn.io/gae/JNCu5cPu95YjoIDrpzAPEkIrbEtJL9KpLmo7GSnuAf9cY2biOy_Rx9OOdvRLe6dp1g2H7ve6p4J2WrF2ioO-fqG6YtP0_VsswYoWlw?auto=format&w=256', 1),
+(2, 'Chonk #439', 0.5, 'Chonky Society', 'https://i.seadn.io/gae/Vjvtl574ofNYXZOB3i1ScGBAg_mQ1aBq6SAkQYPLcpj3pvJYg38BXeQ_5mXbE0s17_6kBKZ9peKxo2kNHtvgiUXD_9YqgyxDDC-LEEg?auto=format&w=1000', 'https://i.seadn.io/gae/JNCu5cPu95YjoIDrpzAPEkIrbEtJL9KpLmo7GSnuAf9cY2biOy_Rx9OOdvRLe6dp1g2H7ve6p4J2WrF2ioO-fqG6YtP0_VsswYoWlw?auto=format&w=256', 1),
+(3, 'Chonk #125', 0.5, 'Chonky Society', 'https://i.seadn.io/gae/NDot7-fR3fqPOuTp4bYjjxd2K-8sDiyn1Rm1cZffkYrqg883SKfpFFzYWrhJdEoF1mdmRtN8vNYj2EFHjosazSY1t49wXmBU5KSrcww?auto=format&w=1000', 'https://i.seadn.io/gae/JNCu5cPu95YjoIDrpzAPEkIrbEtJL9KpLmo7GSnuAf9cY2biOy_Rx9OOdvRLe6dp1g2H7ve6p4J2WrF2ioO-fqG6YtP0_VsswYoWlw?auto=format&w=256', 1),
+(4, 'Chonk #202', 0.5, 'Chonky Society', 'https://i.seadn.io/gae/y1ZYZ6a4uvCl56_ZVF1TQuU3Je5ivwamYrsAM8j3D6Nj9a5HBdhX6Ljel3YmSJjvH_SMyd9DWLH6Mihcm94bm6Yem4zqUh0N2Oil?auto=format&w=1000', 'https://i.seadn.io/gae/JNCu5cPu95YjoIDrpzAPEkIrbEtJL9KpLmo7GSnuAf9cY2biOy_Rx9OOdvRLe6dp1g2H7ve6p4J2WrF2ioO-fqG6YtP0_VsswYoWlw?auto=format&w=256', 1),
+(6, 'Dooplicator #5563', 0.29, 'insectsale', 'https://i.seadn.io/gcs/files/e98dad5dbac144288475ab0d152cb45a.gif?auto=format&w=1000', 'https://storage.googleapis.com/opensea-static/opensea-profile/27.png', 1),
+(5, 'Chonk #573', 0.5, 'Chonky Society', 'https://i.seadn.io/gae/2oQuI4NNRs4Qn6qb8tEwDPGlZmSqoLQhq3q6JJSmlIkC1DMJErKuTFFJoW3qs4Qds_jSKrM0iXErgX5YIxA1BiVvnAOH1bllEFtE?auto=format&w=1000', 'https://i.seadn.io/gae/JNCu5cPu95YjoIDrpzAPEkIrbEtJL9KpLmo7GSnuAf9cY2biOy_Rx9OOdvRLe6dp1g2H7ve6p4J2WrF2ioO-fqG6YtP0_VsswYoWlw?auto=format&w=256', 1),
+(7, 'Space Doodle #1457', 4.10, 'Doodles_LLC', 'https://dl.openseauserdata.com/cache/originImage/files/94e679b3dc1c71fa8f4eee268aa7e804.png', 'https://i.seadn.io/gae/J1DEr5ybuNmbtNXAv501T3UZwqf67qLpZEV_nZpN7qNcF9P8r1ilViQQAPCWeNMqeAVT8C_M6gWuIVCGCeCZMNsKdIdXv-KL6aScQIg?auto=format&w=256', 1),
+(8, 'Genesis Box #14452', 0.17, 'Doodles_LLC', 'https://i.seadn.io/gae/YVyDrv2lF27IX8G7spx3rHXs89G_DYhupoRlcBqRWo5-peJckMhQ-9W831ROMWLQPkqjRptHzF9pUaPB9kMaZEZEMy_s8vQhXgoYrg?auto=format&w=1000', 'https://i.seadn.io/gae/J1DEr5ybuNmbtNXAv501T3UZwqf67qLpZEV_nZpN7qNcF9P8r1ilViQQAPCWeNMqeAVT8C_M6gWuIVCGCeCZMNsKdIdXv-KL6aScQIg?auto=format&w=256', 1),
+(9, 'Meka Legends #468', 0.35, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/468.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(10, 'Akibu Nimeko #467', 0.14, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/467.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(11, 'Meka Legends #33', 0.15, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/33.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(12, 'Meka Legends #409', 0.25, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/409.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(13, 'Meka Legends #469', 2.55, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/469.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(14, 'Meka Legends #4', 0.35, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/4.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(15, 'Meka Legends #130', 0.35, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/130.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(16, 'Dozaki Kamenus #136', 0.35, 'Meka Legends Genesis', 'https://mekalegends.com/opensea/images/136.png', 'https://i.seadn.io/gcs/files/481a7bdde93690d91509f62d9c7b3ad1.gif?auto=format&w=256', 1),
+(17, 'Kagirinai #58', 0.68, 'Kagirinai Official', 'https://i.seadn.io/gcs/files/52189a4eeed65cdca7a463422b346add.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/0bbfd206901018c2d310be74e0f68625.png?auto=format&w=256', 1),
+(18, 'Kagirinai #206', 0.68, 'Kagirinai Official', 'https://i.seadn.io/gcs/files/04443e7ad278607f2d72813c0aa94599.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/0bbfd206901018c2d310be74e0f68625.png?auto=format&w=256', 1),
+(19, 'Kagirinai #173', 0.69, 'Kagirinai Official', 'https://i.seadn.io/gcs/files/3abf0181521a00247ba6cfb84de82c40.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/0bbfd206901018c2d310be74e0f68625.png?auto=format&w=256', 1),
+(20, 'Kagirinai #344', 0.6, 'Kagirinai Official', 'https://i.seadn.io/gcs/files/72596848354eded967862fa7a79353cc.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/0bbfd206901018c2d310be74e0f68625.png?auto=format&w=256', 1),
+(21, 'Ethereal Calling #13', 0.02, 'Ethereal Calling', 'https://i.seadn.io/gcs/files/6a92c4536ef1d19d8dad887f5eeb90c1.jpg?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4e30f297a42cbd690aaebab20713b6cd.png?auto=format&w=256', 1),
+(22, 'Ethereal Calling #11', 0.02, 'Ethereal Calling', 'https://i.seadn.io/gcs/files/a433c9cb5137f08a473b5ab3e36d5e8f.jpg?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4e30f297a42cbd690aaebab20713b6cd.png?auto=format&w=256', 1),
+(23, 'Ethereal Calling #42', 0.02, 'Ethereal Calling', 'https://i.seadn.io/gcs/files/a34b8acd35aab906551b6fa35362a925.jpg?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4e30f297a42cbd690aaebab20713b6cd.png?auto=format&w=256', 1),
+(24, 'Ethereal Calling #6', 0.02, 'Ethereal Calling', 'https://i.seadn.io/gcs/files/d758a291d06542ef765a53dae6614ae2.jpg?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4e30f297a42cbd690aaebab20713b6cd.png?auto=format&w=256', 1),
+(25, 'Voldemort', 0.006, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/d074b1cbcb3851e54c6be96fe62436cb.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(26, 'Hagrid', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/953f70bbbf23f19dd51cfb92119708b3.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(27, 'Lucius', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/b4a895e66d0722d999171fa8b38eda9e.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(28, 'Snape', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/42dae87524259efb7e251900c74c3280.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(29, 'Dumbledore', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/3228f9e63eaa76a2c82216de5fd74d97.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(30, 'Bellatrix', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/dc4b3832721bf857fc401b82a83fb69d.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(31, 'The boy Who lived!', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/9fc8d5fcc02ff65821c949494e151ae3.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1),
+(32, 'Hermione', 0.06, 'HP FUN ART COLLECTION', 'https://i.seadn.io/gcs/files/d8d496d07fc71500bb2f592e00279b68.png?auto=format&w=1000', 'https://i.seadn.io/gcs/files/4ef7c630716268c926dbe350f7d1144e.jpg?auto=format&w=256', 1);
+
+
+
+
+
+
+

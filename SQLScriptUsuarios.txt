@@ -1,0 +1,21 @@
+CREATE DATABASE electropixels_db;
+
+USE electropixels_db; 
+
+CREATE TABLE `usuarios` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre_usuario` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL UNIQUE,
+  `password` varchar(255) NOT NULL,
+  `saldo` decimal(10,2) NOT NULL,
+  `rol` enum('admin','gestor','user') NOT NULL DEFAULT 'user', 
+  PRIMARY KEY (`id`)
+);
+
+
+INSERT INTO `usuarios` (`id`, `nombre_usuario`, `email`, `password`, `saldo`, `rol`) VALUES
+(1, 'admin', 'admin@gmail.com', '1234', '0.00', 'admin'),
+(2, 'gestor', 'gestor@gmail.com', '1234', '0.00', 'gestor'),
+(3, 'cliente', 'cliente@gmail.com', '1234', '10.00', 'user');
+
+

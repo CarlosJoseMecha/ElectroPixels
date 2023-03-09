@@ -1,0 +1,310 @@
+/*
+---------------------------------------------
+colores
+---------------------------------------------
+/*
+---------------------------------------------
+video
+---------------------------------------------
+*/
+.video-background {
+   position: fixed;
+   right: 0;
+   bottom: 0;
+   min-width: 100%;
+   min-height: 100%;
+}
+
+.video-foreground {
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+/*
+---------------------------------------------
+form
+---------------------------------------------
+*/
+.form-control {
+   border: 0;
+   background-color: #603fa600;
+}
+
+.bg-contact3 {
+   width: 100%;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: cover;
+}
+
+.container-contact3 {
+   width: 100%;
+   min-height: 100vh;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   align-items: center;
+   padding: 15px;
+
+}
+
+@media (max-width: 480px) {
+   .container-contact3 {
+      margin-top: 15%;
+   }
+}
+
+.wrap-contact3 {
+   width: 500px;
+   background: #5E25D9;
+   background: -webkit-linear-gradient(45deg, #5E25D9, #D91EBA);
+   background: -o-linear-gradient(45deg, #5E25D9, #D91EBA);
+   background: -moz-linear-gradient(45deg, #5E25D9, #D91EBA);
+   background: linear-gradient(45deg, #5E25D9, #D91EBA);
+   border-radius: 10px;
+   overflow: hidden;
+   padding: 72px 55px 65px 55px;
+   box-shadow: 0 0.5rem 1rem #0f0140db;
+}
+
+.wrap-contact3 h3 {
+   font-family: "Alien Encounters" !important;
+   font-style: italic !important;
+   font-weight: bold !important;
+   font-size: 2.5rem !important;
+   text-shadow: 2px 2px #000000;
+}
+
+
+.wrap-contact3 h5 {
+   font-family: 'Roboto', sans-serif;
+   font-weight: 700;
+   font-size: 1.1rem;
+}
+
+@media (max-width: 1440px) {
+   .container-contact3 {
+      transform: scale(0.9);
+      margin-top: 3%;
+   }
+}
+
+/*------------------------------------------------------------------*/
+
+.contact3-form {
+   width: 100%;
+}
+
+.contact3-form-title {
+   display: block;
+   font-size: 39px;
+   color: #fff;
+   line-height: 1.2;
+   text-align: center;
+   text-transform: uppercase;
+   padding-bottom: 70px;
+}
+
+
+/*------------------------------------------------------------------*/
+
+.wrap-input3 {
+   width: 100%;
+   position: relative;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+   margin-bottom: 27px;
+}
+
+.wrap-input2 {
+   width: 100%;
+   position: relative;
+   border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+}
+
+#passwordHelpBlock {
+   padding-top: 5px;
+   padding-left: 2px;
+   padding-bottom: 10px;
+}
+
+.input3 {
+   border: 0;
+   display: block;
+   width: 100%;
+   background: transparent !important;
+   font-size: 15px;
+   color: #fff;
+   border: 0;
+   line-height: 1.2;
+   padding: 0 5px;
+   outline: none;
+}
+
+.input3::placeholder {
+   color: rgb(255, 255, 255);
+}
+
+.focus-input3 {
+   position: absolute;
+   display: block;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   pointer-events: none;
+   border-color: transparent;
+   outline: none;
+}
+
+.focus-input3::before {
+   border: 0;
+   content: "";
+   display: block;
+   position: absolute;
+   bottom: -2px;
+   left: 0;
+   width: 0;
+   height: 2px;
+
+   -webkit-transition: all 0.4s;
+   -o-transition: all 0.4s;
+   -moz-transition: all 0.4s;
+   transition: all 0.4s;
+   background: #fff;
+}
+
+
+/*---------------------------------------------*/
+input.input3 {
+   height: 45px;
+}
+
+.input3:focus+.focus-input3::before {
+   width: 100%;
+}
+
+.has-val.input3+.focus-input3::before {
+   width: 100%;
+}
+
+/*------------------------------------------------------------------*/
+.container-contact3-form-btn {
+   padding-top: 23px;
+}
+
+.contact3-form-btn {
+   font-size: 16px;
+   color: #ffffff;
+   line-height: 1.2;
+   text-transform: uppercase;
+   font-weight: 700;
+   display: -webkit-box;
+   display: -webkit-flex;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 0 15px;
+   min-width: 120px;
+   height: 50px;
+   border-radius: 2px;
+   position: relative;
+   z-index: 1;
+   background: #F2E307 !important;
+
+   -webkit-transition: all 0.4s;
+   -o-transition: all 0.4s;
+   -moz-transition: all 0.4s;
+   transition: all 0.4s;
+}
+
+.contact3-form-btn::before {
+   content: "";
+   display: block;
+   position: absolute;
+   z-index: -1;
+   border-radius: 2px;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   color: #fff;
+   background: #D91EBA;
+   opacity: 1;
+   -webkit-transition: all 0.4s;
+   -o-transition: all 0.4s;
+   -moz-transition: all 0.4s;
+   transition: all 0.4s;
+}
+
+.contact3-form-btn:hover {
+   color: #5E25D9;
+   background: #F2E307 !important;
+}
+
+.contact3-form-btn:hover:before {
+   opacity: 0;
+}
+
+/*------------------------------------------------------------------*/
+
+@media (max-width: 576px) {
+   .wrap-contact3 {
+      padding: 72px 15px 65px 15px;
+   }
+}
+
+/*------------------------------------------------------------------*/
+
+
+@media (max-width: 992px) {
+   .container-contact3 {
+      padding-top: 15%;
+   }
+
+   .alert-validate::before {
+      visibility: visible;
+      opacity: 1;
+   }
+
+   .socials i {
+      font-size: 1rem !important;
+      width: 0.5rem;
+   }
+}
+
+/********** Boton ir a login ****************/
+.btn-login a{
+   display: inline-block;
+   border: none;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 48px;
+   color: #FFFFFF;
+   background: #5E25D9;
+   border: solid 1px #FFFFFF;
+   outline: none;
+   cursor: pointer;
+}
+
+.btn-login a:hover{
+   display: inline-block;
+   border: none;
+   font-size: 18px;
+   font-weight: 700;
+   line-height: 48px;
+   color: #5E25D9;
+   border-radius: 5px;
+   background: #FFFFFF;
+   border: solid 1px #5E25D9;
+   outline: none;
+   cursor: pointer;
+}

@@ -1,0 +1,71 @@
+/*
+---------------------------------------------
+fuentes
+---------------------------------------------
+*/
+
+/* Alien Encounters */
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Bold-Italic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Solid-Regular.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Solid-Bold.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Solid-Italic.ttf");
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: Alien Encounters;
+    src: url("../assets/fonts/alien_encounters/Alien-Encounters-Solid-BoldI-talic.ttf");
+    font-weight: bold;
+    font-style: italic;
+}
+
+/* Vcr Osd Mono */
+
+@font-face {
+    font-family: vcr_osd_mono;
+    src: url("../assets/fonts/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf");
+    font-weight: normal;
+    font-style: normal;
+}

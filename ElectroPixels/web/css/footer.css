@@ -1,0 +1,25 @@
+/*
+---------------------------------------------
+footer
+---------------------------------------------
+*/
+footer {
+    font-family: 'Poppins', sans-serif !important;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.a-footer {
+    text-decoration: none !important;
+    color: #603FA6 !important;
+}
+
+.a-footer:hover {
+    color: #BF2AB5 !important;
+}
+
+.a-footer:not([href]):not([class]),
+.a-footer:not([href]):not([class]):hover {
+    color: inherit;
+    text-decoration: none !important;
+}
